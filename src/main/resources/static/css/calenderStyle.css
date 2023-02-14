@@ -1,0 +1,13 @@
+.container{
+    width:300px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+.date, .month-change {
+    display: flex;
+}
+.form-control{
+    width:80px;
+}
