@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +51,10 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-        <script>
+        <script th:inline="javascript">
+        let h = [[${h_cal}]];
+        $("#tb_body").html(h.join(""));
+
 <!--            function checkLeapYear(){ //윤년확인함수-->
 <!--                if(year%400 == 0) {-->
 <!--                    return true;-->
@@ -102,23 +105,11 @@
 <!--                renderCalender(arr_calender);-->
 <!--            }-->
 
-<!--            function renderCalender(data) {-->
-<!--                let h = [];-->
-<!--                for(let i=0; i<data.length; i++) {-->
-<!--                    if(i==0) {-->
-<!--                        h.push('<tr>');-->
-<!--                    }-->
-<!--                    else if(i%7==0){-->
-<!--                        h.push('</tr>');-->
-<!--                        h.push('<tr>');-->
-<!--                    }-->
-<!--                    h.push('<td>'+data[i]+'</td>');-->
-<!--                }-->
-
-<!--                h.push('</tr>');-->
-
+<!--            function renderCalender(h) {-->
 <!--                $("#tb_body").html(h.join(""));-->
 <!--            }-->
+
+<!--            renderCalender($("cal"));-->
 
 <!--            function changeMonth(diff) {-->
 <!--                if (diff == undefined) {-->

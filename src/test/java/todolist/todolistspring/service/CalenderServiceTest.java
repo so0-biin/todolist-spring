@@ -12,9 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalenderServiceTest {
 
-
+    private CalenderService calenderService;
     @Test
     void checkLeapYear() {
+        System.out.println(calenderService.checkLeapYear(2023));
     }
 
     @Test
@@ -46,7 +47,7 @@ class CalenderServiceTest {
             }
         }
 
-        System.out.println(arr_calender);
+//        System.out.println(arr_calender);
     }
 
 

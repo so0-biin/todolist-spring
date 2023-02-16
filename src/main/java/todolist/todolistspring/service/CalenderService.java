@@ -1,5 +1,9 @@
 package todolist.todolistspring.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import todolist.todolistspring.repository.CalenderRepository;
+
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -7,7 +11,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class CalenderService {
+    private final CalenderRepository calenderRepository;
+    @Autowired
+    public CalenderService(CalenderRepository calenderRepository) {
+        this.calenderRepository = calenderRepository;
+    }
+
     public boolean checkLeapYear(int year){
         if(year%400 == 0) {
             return true;
@@ -40,7 +51,7 @@ public class CalenderService {
         ArrayList<String> arr_calender = new ArrayList<String>();
         //달력에 1일부터 채우기
         for(int i=1; i<first_day_of_week; i++){ //월요일==1
-            arr_calender.add("");
+            arr_calender.add("#");
         }
         for(int i=1; i<=month_day[month-1]; i++){
             arr_calender.add(String.valueOf(i));
@@ -50,10 +61,27 @@ public class CalenderService {
 
         if(remain_day<7) {
             for(int i=0; i<remain_day; i++){
-                arr_calender.add("");
+                arr_calender.add("#");
             }
         }
 
         return arr_calender;
+    }
+
+    public ArrayList<String> renderCalender(ArrayList<String> data) {
+        ArrayList<String> h_calender = new ArrayList<String>();
+        for(int i=0; i<data.size(); i++) {
+            if(i==0) {
+                h_calender.add("<tr>");
+            }
+            else if(i%7==0){
+                h_calender.add("/<tr>");
+                h_calender.add("<tr>");
+            }
+            h_calender.add("<td>"+ data.get(i) +"</td>");
+        }
+        h_calender.add("/<tr>");
+
+        return h_calender;
     }
 }

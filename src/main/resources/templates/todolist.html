@@ -3,6 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>TodoChallengers</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,6 +13,7 @@
   </head>
   <!-- css file 연결 -->
   <link rel="stylesheet" href="/css/todostyle.css">
+  <script type="text/javascript"></script>
 
   <body>
     <nav>
@@ -33,23 +35,25 @@
         <!-- 프로필(사진, 닉네임, 한줄소개) -->
       </section>
       <section id="calender">
-        <!-- 달력 및 투두 -->
-
+        <!-- 캘린더 -->
+        <div w3-include-html="calender.html"></div>
       </section>
       <section class="feed">
         <!-- feed 은화언니 부분 -->
       </section>
     </main>
-    <script>
-      async function fetchHtmlAsText(url) {
-        return await (await fetch(url)).text();
-      }
+<!--      $(document).ready( function() {-->
+<!--          $("#calender").load("calender.html");-->
+<!--      });-->
 
-      async function importPage(target) {
-          document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target);
-      }
+<!--      async function fetchHtmlAsText(url) {-->
+<!--        return await (await fetch(url)).text();-->
+<!--      }-->
 
-      importPage("calender");
-    </script>
+<!--      async function importPage(target) {-->
+<!--          document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target);-->
+<!--      }-->
+
+<!--      importPage("calender");-->
   </body>
 </html>
