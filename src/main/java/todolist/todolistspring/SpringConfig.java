@@ -6,6 +6,4 @@ import todolist.todolistspring.service.CalenderService;
 
 @Configuration
 public class SpringConfig {
-//    @Bean
-//    public CalenderService
 }

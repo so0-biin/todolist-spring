@@ -55,7 +55,7 @@ main {
   display: grid;
   margin: 24px 0;
   grid-template-rows: 1fr 1.5fr 6fr;
-  grid-template-columns: 600px 1fr;
+  grid-template-columns: 450px 1fr;
   gap: 30px 10px;
   grid-template-areas:
   'challenges feed'
@@ -83,4 +83,28 @@ section {
 
 .feed {
   grid-area: feed;
+}
+
+p {
+    margin:0;
+}
+
+
+
+.cal_container{
+    width:300px;
+}
+.cal_nav{
+    display: flex;
+    justify-content: space-between;
+}
+.date, .month-change {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn{
+    background-color: transparent;
+    border:none;
+    padding:0;
 }

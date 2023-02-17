@@ -1,9 +1,10 @@
 .container{
     width:300px;
 }
-nav{
+.cal-nav{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .date, .month-change {
     display: flex;
