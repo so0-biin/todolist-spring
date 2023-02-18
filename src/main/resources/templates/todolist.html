@@ -35,7 +35,11 @@
         <!-- 챌린지 바 부분 -->
       </section>
       <section class="profile">
-        <p th:text="'hello ' + ${id}">hello! empty</p>
+        <img class="profile_img" src="/img/profile_img.jpg" >
+        <div class="profile_des">
+          <p th:text="${id}">profile id</p>
+          <p>한줄소개</p>
+        </div>
         <!-- 프로필(사진, 닉네임, 한줄소개) -->
       </section>
       <section id="calender">
